@@ -1,0 +1,2 @@
+# Privacy
+FurSense Privacy Policy
