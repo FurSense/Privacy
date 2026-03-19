@@ -26,6 +26,7 @@ By using FurSense, you agree to the collection and use of information in accorda
 1. [Dog Profile Information](#1-dog-profile-information)
 2. [Health Tracking Data](#2-health-tracking-data)
 3. [Photos & AI Analysis](#3-photos--ai-analysis)
+   - [3a. Location & Device Sensors](#3a-location--device-sensors)
 4. [Sign in with Apple](#4-sign-in-with-apple)
 5. [iCloud Sync & Data Storage](#5-icloud-sync--data-storage)
 6. [Subscriptions & Payments](#6-subscriptions--payments)
@@ -114,7 +115,51 @@ Photos are stored locally on your device. When you use AI analysis features, pho
 
 > ⚠️ **Important:** AI features are OPTIONAL — you control when they are used. All transmissions use encrypted HTTPS connections.
 
-If you choose to sign in with Apple:
+---
+
+## 3a. Location & Device Sensors
+
+FurSense uses your device's location and sensors for the following specific features only:
+
+### 📍 Location
+
+| Feature | Permission Level | What it does | Stored? | Sent externally? |
+|---------|-----------------|-------------|---------|-----------------|
+| **Walk Tracker** | Always (background) | Continuous GPS tracking during an active walk. Route points, distance, duration, and calorie estimates are saved **on your device only** (SwiftData). Location tracking stops when you end or pause the walk. | ✅ On-device only | ❌ No |
+| **Weather card** | When In Use | Your coordinates are sent once to a weather data provider to fetch local conditions (temperature, UV, wind). Location is **not stored**. | ❌ No | ✅ Weather service |
+| **Vet Finder** | When In Use | Your location is used once to search for nearby veterinary clinics. Location is **not stored**. | ❌ No | ✅ Mapping service |
+
+**We do NOT:**
+- Track your location in the background outside of an active walk
+- Store your location on our servers
+- Share your location with advertisers
+
+### 🎙️ Microphone
+
+| Feature | What it does | Sent externally? |
+|---------|-------------|-----------------|
+| **Bark Translator** | Records a short audio clip of your dog's bark and sends it to our secure AI backend for analysis. The clip is not stored on our servers. | ✅ AI backend (secure) |
+| **Ultrasonic Detector** | Records audio to detect high-frequency sounds. All processing is done **on your device** — no audio is sent externally. | ❌ No |
+
+### 📷 Camera
+
+The camera is used in the following features — photos and video are processed locally unless you actively request AI analysis:
+
+- Dog profile photos and symptom photos
+- Veterinary document scanning (OCR)
+- Breed Intelligence (live camera analysis)
+- Breathing Rate Monitor (camera-based chest movement tracking — on-device)
+- Dog Vision AR (AR colour simulation — on-device)
+- Body Language AR (pose detection — on-device)
+- Toxin/Ingredient Scanner (barcode and image scanning)
+
+### 🏃 Motion
+
+Device motion data (accelerometer/gyroscope) is used **only** for the parallax visual effect on the home screen. It is never stored or sent externally.
+
+---
+
+## 4. Sign in with Apple
 
 **Information Received from Apple:**
 - Your Apple ID user identifier (anonymous token)
@@ -207,7 +252,7 @@ We respect your privacy. We do **NOT** collect:
 
 - ✗ Your real name or email (unless shared via Sign in with Apple)
 - ✗ Your contacts or address book
-- ✗ Your precise location (except momentarily for Vet Finder)
+- ✗ Your precise location (except for Walk Tracker, Weather, and Vet Finder — see Section 3a)
 - ✗ Your browsing history
 - ✗ Your device IDFA (advertising identifier)
 - ✗ Your biometric data (Face ID/Touch ID)
@@ -337,9 +382,8 @@ FurSense is rated 4+ but is **not** intended for unsupervised use by children un
 - Deleting from the app removes it from all synced devices
 
 **AI Processing:**
-- Google Gemini: Per Google's AI data retention policy
-- Google Vision: Temporary (< 24 hours typically)
-- AWS: Processed and discarded per AWS policies
+- Photos/audio submitted for analysis are processed temporarily by our AI service providers
+- Data is not retained long-term by those providers
 
 **After App Deletion:**
 - Deleting the app removes ALL local data
@@ -405,7 +449,7 @@ In accordance with Apple's App Store privacy requirements, FurSense declares the
 | Data Type | Collected | Linked to Identity | Used for Tracking |
 |-----------|-----------|-------------------|-------------------|
 | Photos | Yes (for AI analysis) | No | No |
-| Location | Yes (Vet Finder only) | No | No |
+| Location | Yes (Walk Tracker, Weather, Vet Finder) | No | No |
 | Health & Fitness | Yes (stored locally) | No | No |
 | User ID | Yes (Firebase account ID) | Yes | No |
 | Device ID | Yes (crash reporting only) | No | No |
