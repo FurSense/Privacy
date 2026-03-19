@@ -1,7 +1,7 @@
 # FurSense — Privacy Policy
 
 **Effective Date:** 1 February 2026  
-**Last Updated:** 4 March 2026  
+**Last Updated:** 19 March 2026  
 **App:** FurSense — AI Dog Health Companion  
 **Platform:** iOS (Apple App Store)
 
@@ -110,21 +110,9 @@ When you use health features, we store:
 
 **How Photos Are Processed:**
 
-Photos are stored locally on your device. When you use AI analysis features, photos are securely transmitted to our AI providers for processing:
+Photos are stored locally on your device. When you use AI analysis features, photos are securely transmitted to our third-party AI service providers for processing. These services process photos temporarily and do **not** retain them long-term. No personal identifiers are sent with photos.
 
-| Provider | Purpose |
-|----------|---------|
-| Google Gemini AI | Photo analysis, health insights, bark interpretation, breed identification |
-| Google Cloud Vision | Breed detection, document OCR |
-| AWS Rekognition | Image analysis, content detection |
-| Clarifai | Visual recognition |
-| Imagga | Image categorisation |
-
-These services process photos temporarily and do **not** retain them long-term. No personal identifiers are sent with photos.
-
----
-
-## 4. Sign in with Apple
+> ⚠️ **Important:** AI features are OPTIONAL — you control when they are used. All transmissions use encrypted HTTPS connections.
 
 If you choose to sign in with Apple:
 
@@ -191,31 +179,25 @@ If you choose to sign in with Apple:
 
 ## 7. Third-Party AI Services
 
-When you use AI-powered features, data is sent to:
+When you use AI-powered features, certain data (such as photos or audio you choose to analyse) is sent to our third-party AI service providers for processing.
 
-### Google Gemini AI (Primary)
-- **Purpose:** Photo analysis, health observations, bark interpretation, breed ID
-- **Data sent:** Photos, audio recordings you choose to analyse
-- **Retention:** Per Google's AI data retention policy
-- **Privacy:** https://ai.google/privacy
+**What we send:**
+- Photos or audio clips you explicitly choose to analyse
+- No personal identifiers, name, email, or location are attached
 
-### Google Cloud Vision API
-- **Purpose:** Breed detection, document OCR, image labels
-- **Data sent:** Photos for analysis
-- **Retention:** Temporary (typically < 24 hours)
-- **Privacy:** https://cloud.google.com/terms/cloud-privacy-notice
+**How it works:**
+- Data is transmitted over encrypted HTTPS connections
+- Providers process the data temporarily to return a result
+- Providers do **not** retain your data long-term
+- No data is used to train AI models without your explicit consent
 
-### Amazon Web Services (AWS Rekognition)
-- **Purpose:** Image analysis, label detection
-- **Data sent:** Photos for analysis
-- **Privacy:** https://aws.amazon.com/privacy
+**Your control:**
+- AI features are entirely optional — you decide when to use them
+- You can use FurSense's health logging features without ever using any AI feature
 
-### Google Places API
-- **Purpose:** Find nearby veterinary clinics
-- **Data sent:** Your location (only when you use Vet Finder)
-- We do NOT store your location data
+We do not disclose the specific names of our AI providers publicly to protect our intellectual property. All providers we use are established, reputable technology companies operating under their own privacy policies and data processing agreements.
 
-> ⚠️ **Important:** AI features are OPTIONAL — you control when they are used. No personal identifiers are sent with photos. All transmissions use encrypted HTTPS connections.
+> ⚠️ **Important:** AI-generated results are for educational and informational purposes only and are not a substitute for professional veterinary advice.
 
 ---
 
@@ -425,11 +407,13 @@ In accordance with Apple's App Store privacy requirements, FurSense declares the
 | Photos | Yes (for AI analysis) | No | No |
 | Location | Yes (Vet Finder only) | No | No |
 | Health & Fitness | Yes (stored locally) | No | No |
-| Identifiers | Apple ID token only | No | No |
+| User ID | Yes (Firebase account ID) | Yes | No |
+| Device ID | Yes (crash reporting only) | No | No |
+| Audio Data | Yes (bark analysis only) | No | No |
 | Usage Data | Anonymous crash reports | No | No |
 | Payment Info | No (handled by Apple) | — | — |
 
 ---
 
 *© 2026 FurSense. All rights reserved.*  
-*This privacy policy was last updated on 4 March 2026.*
+*This privacy policy was last updated on 19 March 2026.*
